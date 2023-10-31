@@ -32,7 +32,6 @@ export class PrismaExceptionFilter implements ExceptionFilter {
   };
 
   catch(exception: Prisma.PrismaClientKnownRequestError) {
-    console.log(exception.meta);
     if (exception.code in this.errors) {
       throw new HttpException(
         {
